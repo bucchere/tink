@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  question_id: 1
+  'yes': false
+  accepted: false
+  matched: false
+
+two:
+  user_id: 1
+  question_id: 1
+  'yes': false
+  accepted: false
+  matched: false
