@@ -1,0 +1,1 @@
+Rails.application.config.user_whitelist = eval(ENV['USER_WHITELIST'])

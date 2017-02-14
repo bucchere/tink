@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize
-    redirect_to '/auth/google_oauth2' unless current_user && current_user.id == 3
+    redirect_to '/auth/google_oauth2' unless current_user && Rails.application.config.user_whitelist.include?(current_user.uid)
   end
 end
