@@ -24,11 +24,12 @@ Basically it's Tinder, but for couples. But no, not like that. (Eww.)
   1. Turn on the "credentials" API
   1. Set redirect URL to `http(s)://<server>:<port>/auth/google_oauth2`
 1. Install foreman
+1. Set configuration variables (see below)
 1. Install RVM
 1. Clone the repo and `cd` into it (following RVM prompts, if any)
 1. `bundle`
-1. `db:setup`
-1. `whenever --update-crontab`
+1. `foreman run rake db:setup`
+1. `foreman run whenever --update-crontab`
 
 ##Configuration
 Create a `.env` file for foreman and set the following variables.
