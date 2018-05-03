@@ -1,16 +1,16 @@
-#Tink
+# Tink
 
 A simple SMS-based chatbot designed to help couples discover mutual interests.
 
-##How it works
+## How it works
 
 Every few days, Tink will pick a random time to text randomly-selected yes-or-no questions from a list of questions to both people in a couple. When both people reply "Y" to the same question, it will notify both parties about a potential matching interest.
 
 Basically it's Tinder, but for couples. But no, not like that. (Eww.)
 
-##Dependencies
+## Dependencies
 
-###End-user Application
+### End-user Application
 * *nix
 * RVM
 * Ruby/Rails
@@ -18,7 +18,7 @@ Basically it's Tinder, but for couples. But no, not like that. (Eww.)
 * Twilio
 * Google App with Credentials API turned on
 
-##Set up
+## Set up
 1. Set up a Twilio account
 1. Set up a Google application
   1. Turn on the "credentials" API
@@ -31,7 +31,7 @@ Basically it's Tinder, but for couples. But no, not like that. (Eww.)
 1. `foreman run rake db:setup`
 1. `foreman run whenever --update-crontab`
 
-##Configuration
+## Configuration
 Create a `.env` file for foreman and set the following variables.
 
 ```
@@ -50,29 +50,29 @@ USER_WHITELIST=['admin_google_uid1', 'admin_google_uid2']
 
 ```
 
-##Launching
+## Launching
 
-###Web app
+### Web app
 `foreman run rails s` starts the web server
 
-###Cron
+### Cron
 `sudo service cron restart` restarts cron to pick up changes to the crontab
 
-###Console
+### Console
 `foreman run rails c` starts the rails console
 
 `User.play` manually triggers sending questions (if, say, cron is off)
 
 `User.play true` forces the app to send questions immediately, ingoring the `next_ask` field on the users
 
-##Questions
+## Questions
 
-###Authoring
+### Authoring
 With ten questions in total, Tink will have enough material for about 2.5 weeks. Questions should all have Yes or No answers and roughly 25% of them should have a high likelihood of matching (to keep both parties engaged).
 
-###Masking
+### Masking
 Every time Tink asks a question, it will first ask if it's okay to send the question (to avoid any embarrassing situations). Match responses will be sent without a leading prompt, so be mindful of that when answering "Y" to a question.
 
-##License
+## License
 
 Tink is opensource with some rights reserved under the MIT license.
